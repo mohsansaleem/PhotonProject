@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// Photon raised events handler.
+/// </summary>
 public class PhotonRaisedEventsHandler
 {
     private System.Collections.Generic.Dictionary<EventsIDs, System.Delegate> eventTable;
@@ -56,6 +58,12 @@ public class PhotonRaisedEventsHandler
         eventTable[eventId] = (Action<System.Object, int>)eventTable[eventId] - eventToRemove;
     }
 
+    /// <summary>
+    /// Event Listener for EventRaise of Photon Network. Register it in Photon Manager.
+    /// </summary>
+    /// <param name="eventcode">Eventcode.</param>
+    /// <param name="content">Content.</param>
+    /// <param name="senderid">Senderid.</param>
     public void OnEventRaised(byte eventcode, object content, int senderid)
     {
         Debug.LogError("EventRaised.");

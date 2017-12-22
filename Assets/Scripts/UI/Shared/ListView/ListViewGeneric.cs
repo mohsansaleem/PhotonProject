@@ -37,20 +37,37 @@ public class ListViewGeneric<M, V> : MonoBehaviour where V : ListNodeGeneric<M>
     List<V> rowsViews = new List<V>();
     List<V> rowsPool = new List<V>();
 
-
+    /// <summary>
+    /// Optimise this instance. Destroyes the rows in pool.
+    /// </summary>
     [ContextMenu("Optimise")]
-    void Optimise()
+    private void Optimise()
     {
-        while (dataList.Count < rowsViews.Count)
-            DestroyViewNodeAt(addNewToStart ? 0 : dataList.Count);
+        //while (dataList.Count < rowsViews.Count)
+        //DestroyViewNodeAt(addNewToStart ? 0 : dataList.Count);
+        while (rowsPool.Count > 0)
+        {
+            Destroy(rowsViews[0].gameObject);
+            rowsPool.RemoveAt(0);
+        }
     }
 
-    public void DestroyViewNodeAt(int index)
+    /// <summary>
+    /// Destroies the view node at index.
+    /// </summary>
+    /// <param name="index">Index.</param>
+    private void DestroyViewNodeAt(int index)
     {
         Destroy(rowsViews[index].gameObject);
         rowsViews.RemoveAt(index);
     }
 
+    /// <summary>
+    /// Adds the new row.
+    /// </summary>
+    /// <returns>The new row.</returns>
+    /// <param name="rowData">Row data.</param>
+    /// <param name="addToStart">If set to <c>true</c> add to start.</param>
     public V AddNewRow(M rowData, bool addToStart = false)
     {
 
@@ -80,6 +97,10 @@ public class ListViewGeneric<M, V> : MonoBehaviour where V : ListNodeGeneric<M>
         return newRoomRow;
     }
 
+    /// <summary>
+    /// Removes the node at index.
+    /// </summary>
+    /// <param name="index">Index.</param>
     public void RemoveNodeAt(int index)
     {
         if (shouldPoolExtraRows)
@@ -97,6 +118,10 @@ public class ListViewGeneric<M, V> : MonoBehaviour where V : ListNodeGeneric<M>
 
     #region Properties
 
+    /// <summary>
+    /// Gets or sets the data list.
+    /// </summary>
+    /// <value>The data list.</value>
     public List<M> DataList
     {
         get
@@ -142,6 +167,10 @@ public class ListViewGeneric<M, V> : MonoBehaviour where V : ListNodeGeneric<M>
         }
     }
 
+    /// <summary>
+    /// Gets or sets a value indicating whether this <see cref="T:ListViewGeneric`2"/> is visible.
+    /// </summary>
+    /// <value><c>true</c> if visible; otherwise, <c>false</c>.</value>
     public bool Visible
     {
         get
@@ -155,6 +184,10 @@ public class ListViewGeneric<M, V> : MonoBehaviour where V : ListNodeGeneric<M>
         }
     }
 
+    /// <summary>
+    /// Gets or sets a value indicating whether this <see cref="T:ListViewGeneric`2"/> is enabled.
+    /// </summary>
+    /// <value><c>true</c> if enabled; otherwise, <c>false</c>.</value>
     public bool Enabled
     {
         get

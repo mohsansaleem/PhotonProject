@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// List node generic.
+/// </summary>
 [RequireComponent(typeof(LayoutElement))]
 public class ListNodeGeneric<M> : MonoBehaviour
 {
-
+    /// <summary>
+    /// The data.
+    /// </summary>
     M data;
 
     #region Properties
 
+    /// <summary>
+    /// Gets or sets the data.
+    /// </summary>
+    /// <value>The data.</value>
     virtual public M Data
     {
         get
@@ -24,6 +33,10 @@ public class ListNodeGeneric<M> : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets or sets a value indicating whether this <see cref="T:ListNodeGeneric`1"/> is active.
+    /// </summary>
+    /// <value><c>true</c> if active; otherwise, <c>false</c>.</value>
     public bool Active
     {
         get

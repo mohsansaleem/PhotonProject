@@ -36,6 +36,7 @@ public class PlayerController : Photon.PunBehaviour, IPunObservable
     public void SendMessageToOthers(string msg)
     {
         photonView.RPC("MessageRPCReceived", PhotonTargets.Others, msg);
+
         //PhotonManager.Instance.RaiseEvent(EventsIDs.ChatMessage, msg, true, null);
     }
 

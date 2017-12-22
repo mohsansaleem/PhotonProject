@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 namespace Game.Controllers.Lobby
 {
+    /// <summary>
+    /// Rooms controller.
+    /// </summary>
     public class RoomsController : ListViewGeneric<RoomRowModel, RoomRowViewModel>
     {
         [Header("References")]

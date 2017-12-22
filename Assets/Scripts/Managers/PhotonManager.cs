@@ -106,6 +106,13 @@ namespace Game.Managers
             }
         }
 
+        /// <summary>
+        /// Raises the event. Call this function to do the thing.
+        /// </summary>
+        /// <param name="eventId">Event identifier.</param>
+        /// <param name="content">Content.</param>
+        /// <param name="sendReliable">If set to <c>true</c> send reliable.</param>
+        /// <param name="options">Options.</param>
         public void RaiseEvent(EventsIDs eventId, object content, bool sendReliable, RaiseEventOptions options)
         {
             //byte evCode = 0;    // my event 0. could be used as "group units"
@@ -115,17 +122,26 @@ namespace Game.Managers
             PhotonNetwork.RaiseEvent((byte)eventId, content, sendReliable, options);
         }
 
-
+        /// <summary>
+        /// Joins the lobby.
+        /// </summary>
         public void JoinLobby()
         {
             PhotonNetwork.JoinLobby();
         }
 
+        /// <summary>
+        /// Leaves the lobby.
+        /// </summary>
         public void LeaveLobby()
         {
             PhotonNetwork.LeaveLobby();
         }
 
+        /// <summary>
+        /// Creates the room with name.
+        /// </summary>
+        /// <param name="roomName">Room name.</param>
         public void CreateRoomWithName(string roomName)
         {
             Debug.LogError("PhotonController.CreateRoomWithName Called.");

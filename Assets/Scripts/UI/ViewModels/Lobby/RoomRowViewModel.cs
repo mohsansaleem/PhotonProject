@@ -4,6 +4,9 @@ using Game.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Room row view model.
+/// </summary>
 public class RoomRowViewModel : ListNodeGeneric<RoomRowModel>
 {
     [Header("References")]
@@ -24,7 +27,10 @@ public class RoomRowViewModel : ListNodeGeneric<RoomRowModel>
 
 
     #region Properties
-
+    /// <summary>
+    /// Gets or sets the data.
+    /// </summary>
+    /// <value>The data.</value>
     public override RoomRowModel Data
     {
         get
