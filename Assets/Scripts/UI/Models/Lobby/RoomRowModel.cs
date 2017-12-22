@@ -2,47 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomRowModel
+namespace Game.UI.Models.Lobby
 {
-    string roomName;
-    int playersCount;
-
-    public RoomRowModel()
+    public class RoomRowModel
     {
-        roomName = "";
-        playersCount = 0;
-    }
+        string roomName;
+        int playersCount;
 
-    public RoomRowModel(string roomName, int playersCount)
-    {
-        this.roomName = roomName;
-        this.playersCount = playersCount;
-    }
-
-    public string RoomName
-    {
-        get
+        public RoomRowModel()
         {
-            return roomName;
+            roomName = "";
+            playersCount = 0;
         }
 
-        set
+        public RoomRowModel(string roomName, int playersCount)
         {
-            roomName = value;
+            this.roomName = roomName;
+            this.playersCount = playersCount;
+        }
+
+        public string RoomName
+        {
+            get
+            {
+                return roomName;
+            }
+
+            set
+            {
+                roomName = value;
+            }
+        }
+
+        public int PlayersCount
+        {
+            get
+            {
+                return playersCount;
+            }
+
+            set
+            {
+                playersCount = value;
+            }
         }
     }
-
-    public int PlayersCount
-    {
-        get
-        {
-            return playersCount;
-        }
-
-        set
-        {
-            playersCount = value;
-        }
-    }
-
 }

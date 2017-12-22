@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Game.Controllers.Lobby;
-using UnityEngine;
+﻿using Game.UI.ViewModels.Lobby;
+using Game.UI.ViewModels.Match;
 
 namespace Game.Managers
 {

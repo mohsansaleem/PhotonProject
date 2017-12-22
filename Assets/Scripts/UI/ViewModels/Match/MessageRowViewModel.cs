@@ -1,33 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Game.UI.Models.Match;
+using Game.UI.Shared;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MessageRowViewModel : ListNodeGeneric<MessageNode>
+namespace Game.UI.ViewModels.Match
 {
-    [Header("Refrerences")]
-    [SerializeField]
-    Text messageText;
-    [SerializeField]
-    Text senderText;
-
-    #region Properties
-
-    public override MessageNode Data
+    public class MessageRowViewModel : ListNodeGeneric<MessageNode>
     {
-        get
+        [Header("Refrerences")]
+        [SerializeField]
+        Text messageText;
+        [SerializeField]
+        Text senderText;
+
+        #region Properties
+
+        public override MessageNode Data
         {
-            return base.Data;
+            get
+            {
+                return base.Data;
+            }
+
+            set
+            {
+                base.Data = value;
+
+                messageText.text = Data.Message;
+                senderText.text = Data.Sender;
+            }
         }
 
-        set
-        {
-            base.Data = value;
-
-            messageText.text = Data.Message;
-            senderText.text = Data.Sender;
-        }
+        #endregion Properties
     }
-
-    #endregion Properties
 }

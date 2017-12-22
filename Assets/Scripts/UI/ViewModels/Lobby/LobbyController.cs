@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Game.Managers;
+using Game.UI.Models.Lobby;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Game.Controllers.Lobby
+namespace Game.UI.ViewModels.Lobby
 {
     public class LobbyController : MonoBehaviour
     {

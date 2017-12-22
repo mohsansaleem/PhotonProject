@@ -1,9 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using Game.UI.Models.Match;
+using Game.UI.Shared;
 
-public class MessagesPanel : ListViewGeneric<MessageNode, MessageRowViewModel>
+namespace Game.UI.ViewModels.Match
 {
+    public class MessagesPanel : ListViewGeneric<MessageNode, MessageRowViewModel>
+    {
 
 
+    }
 }

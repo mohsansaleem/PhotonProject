@@ -1,50 +1,53 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Game.Managers;
+﻿using Game.Managers;
+using Game.UI.Models.Lobby;
+using Game.UI.Shared;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// Room row view model.
-/// </summary>
-public class RoomRowViewModel : ListNodeGeneric<RoomRowModel>
+namespace Game.UI.ViewModels.Lobby
 {
-    [Header("References")]
-    [SerializeField]
-    Text roomName;
-    [SerializeField]
-    Text playersCount;
-
-    #region PublicFunctions
-
-    public void OnJoinButtonClicked()
-    {
-        if (GameManager.Instance.LobbyController != null)
-            GameManager.Instance.LobbyController.JoinRoomWithName(Data.RoomName);
-    }
-
-    #endregion PublicFunctions
-
-
-    #region Properties
     /// <summary>
-    /// Gets or sets the data.
+    /// Room row view model.
     /// </summary>
-    /// <value>The data.</value>
-    public override RoomRowModel Data
+    public class RoomRowViewModel : ListNodeGeneric<RoomRowModel>
     {
-        get
+        [Header("References")]
+        [SerializeField]
+        Text roomName;
+        [SerializeField]
+        Text playersCount;
+
+        #region PublicFunctions
+
+        public void OnJoinButtonClicked()
         {
-            return base.Data;
+            if (GameManager.Instance.LobbyController != null)
+                GameManager.Instance.LobbyController.JoinRoomWithName(Data.RoomName);
         }
 
-        set
-        {
-            base.Data = value;
+        #endregion PublicFunctions
 
-            roomName.text = Data.RoomName;
-            playersCount.text = Data.PlayersCount.ToString();
+
+        #region Properties
+        /// <summary>
+        /// Gets or sets the data.
+        /// </summary>
+        /// <value>The data.</value>
+        public override RoomRowModel Data
+        {
+            get
+            {
+                return base.Data;
+            }
+
+            set
+            {
+                base.Data = value;
+
+                roomName.text = Data.RoomName;
+                playersCount.text = Data.PlayersCount.ToString();
+            }
         }
+        #endregion Properties
     }
-    #endregion Properties
 }

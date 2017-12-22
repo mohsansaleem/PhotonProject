@@ -68,7 +68,7 @@ namespace Game.Managers
 
         }
 
-        void OnDestroy()
+        new void OnDestroy()
         {
             base.OnDestroy();
             PhotonNetwork.OnEventCall -= raisedEventsHandler.OnEventRaised;
@@ -87,7 +87,7 @@ namespace Game.Managers
         #region PublicFunctions
 
         /// <summary>
-        /// Start the connection process. 
+        /// Start the connection process.
         /// - If already connected, we attempt joining a random room
         /// - if not yet connected, Connect this application instance to Photon Cloud Network
         /// </summary>

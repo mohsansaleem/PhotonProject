@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Game.Managers;
+﻿using Game.Managers;
+using Game.UI.Models.Lobby;
+using Game.UI.Shared;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.Controllers.Lobby
+namespace Game.UI.ViewModels.Lobby
 {
     /// <summary>
     /// Rooms controller.

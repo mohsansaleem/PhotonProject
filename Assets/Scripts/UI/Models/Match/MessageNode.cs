@@ -1,29 +1,32 @@
-﻿public class MessageNode
+﻿namespace Game.UI.Models.Match
 {
-    string message;
-    string sender;
-
-    public MessageNode(string message, string sender)
+    public class MessageNode
     {
-        this.message = message;
-        this.sender = sender;
-    }
+        string message;
+        string sender;
 
-    public string Message
-    {
-        get { return message; }
-        set
+        public MessageNode(string message, string sender)
         {
-            message = value;
+            this.message = message;
+            this.sender = sender;
         }
-    }
 
-    public string Sender
-    {
-        get { return sender; }
-        set
+        public string Message
         {
-            sender = value;
+            get { return message; }
+            set
+            {
+                message = value;
+            }
+        }
+
+        public string Sender
+        {
+            get { return sender; }
+            set
+            {
+                sender = value;
+            }
         }
     }
 }
